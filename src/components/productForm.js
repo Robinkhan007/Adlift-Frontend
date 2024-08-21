@@ -21,10 +21,13 @@ function ProductForm({ onAddProduct }) {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/products", {
-        name: productName,
-        data: parsedData,
-      });
+      const response = await axios.post(
+        "https://adlift-backend.vercel.app/api/products",
+        {
+          name: productName,
+          data: parsedData,
+        }
+      );
 
       onAddProduct(response.data); 
       setProductName("");
